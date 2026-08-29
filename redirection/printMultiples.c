@@ -10,6 +10,8 @@ int main(int argc, char *argv[]){
   int num = atoi(argv[1]);
   int max = atoi(argv[2]);
   // TODO: print all multiples of 'num' up to 'max', each on a separate line
-  
+  for (int mult = num; mult <= max; mult += num){
+    printf("%d\n", mult);
+  }
   return 0;
 }
