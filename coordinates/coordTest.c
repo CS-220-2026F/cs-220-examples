@@ -8,6 +8,11 @@ int main(int argc, char * argv[]){
   then print the value of each coordinate to verify that they were
   initialized correctly
   */
+  int x = atoi(argv[1]);
+  int y = atoi(argv[2]);
+
+  coord xy = coord_create(x,y);
+  printf("xy->x = %d, xy->y = %d\n",coord_getx(xy),coord_gety(xy));
   
   return 0;
 }
