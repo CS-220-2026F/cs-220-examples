@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SIZE 10
+#define PROD(n,m) n*m
+
+int main(){
+  int ary[SIZE];
+  for (int i = 0; i < SIZE; i++){
+    ary[i] = i+1;
+  }
+  for (int i = 0; i < SIZE; i++){
+    // TODO: alter the array here
+    ary[i] = PROD(SIZE-1,ary[i]); // set to 9, 18, 27, etc..
+    printf("ary[%d] = %d\n", i, ary[i]);
+  }
+  return 0;
+}
