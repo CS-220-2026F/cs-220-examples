@@ -14,10 +14,10 @@ int main(int argc, char *argv[]){
   int b = atoi(argv[2]);
   printf("%d + %d = %d\n",a,b,add_asm(a,b));
   printf("%d - %d = %d\n",a,b,sub_asm(a,b));
-  printf("%d * %d = %d\n",a,b,mul_asm(a,b));
-  printf("%d / %d = %d\n",a,b,divide_asm(a,b));
-  printf("%d %% %d = %d\n",a,b,remain_asm(a,b));
-  printf("%d ** %d = %d\n",a,b,expnt_asm(a,b));
+  // printf("%d * %d = %d\n",a,b,mul_asm(a,b));
+  // printf("%d / %d = %d\n",a,b,divide_asm(a,b));
+  // printf("%d %% %d = %d\n",a,b,remain_asm(a,b));
+  // printf("%d ** %d = %d\n",a,b,expnt_asm(a,b));
   
   return 0;
 }
