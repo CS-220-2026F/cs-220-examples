@@ -3,6 +3,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+// Goal: make it print "That is correct!"
+
+int secret;
+
 int getNumber(){
   char buffer[20];
   printf("Guess a number:\n");
@@ -11,18 +15,12 @@ int getNumber(){
   return num;
 }
 
-void target(){
-  printf("That is correct!\n");
-  exit(0);
-}
-
 int main(int argc, char** argv) {
   int fd = open("/dev/urandom", O_RDONLY);
   if(fd == -1){
     fprintf(stderr, "Unable to open file\n");
     return -1;
   }
-  int secret;
   if(read(fd, &secret, sizeof(int)) != sizeof(int)){
     fprintf(stderr, "Read error!\n");
     return 1;
@@ -31,10 +29,11 @@ int main(int argc, char** argv) {
   
   int guess = getNumber();
   if (guess == secret){
-    target();
+    printf("That is correct!\n");
+    exit(0);
   }
-  else
-    printf("Incorrect guess.\n");
+  else{
+    printf("Incorrect, secret = 0x%x\n", secret);    
+  }
   return 0;
 }
-  
