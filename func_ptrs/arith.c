@@ -15,6 +15,9 @@ int main(int argc, char *argv[]) {
   // TODO: make an array of function pointers for each of
   // of the above arithmetic operations, loop through and
   // execute each
-  
+  int (*funcs[])(int,int) = {add,sub,mul,quo,rem};
+  for (int i = 0; i < NUM; i++){
+    printf("%d %c %d = %d\n", a, ops[i], b, funcs[i](a,b));
+  }
   return 0;
 }
